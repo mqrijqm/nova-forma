@@ -69,7 +69,7 @@ export default function Pickup({ slides, label }: { slides: Slide[]; label: stri
       s.tl?.kill()
       gsap.killTweensOf(loop)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [slides.length])
 
   return (

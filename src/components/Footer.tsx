@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 import gsap from 'gsap'
 import type { Locale } from '@/lib/i18n'
 import type { Dict } from '@/content/dict'
@@ -12,14 +12,18 @@ import { Arrow, Border, Headline, Marquee, Spacer, ULink } from './ui'
 import { runtime } from '@/lib/store'
 
 export function scrollTop() {
-  runtime.lenis ? runtime.lenis.scrollTo(0, { duration: 1.6 }) : window.scrollTo({ top: 0, behavior: 'smooth' })
+  if (runtime.lenis) runtime.lenis.scrollTo(0, { duration: 1.6 })
+  else window.scrollTo({ top: 0, behavior: "smooth" })
+}
+
+function subscribeTheme(cb: () => void) {
+  const mo = new MutationObserver(cb)
+  mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
+  return () => mo.disconnect()
 }
 
 export function ThemeToggle({ t }: { t: Dict }) {
-  const [inv, setInv] = useState(false)
-  useEffect(() => {
-    setInv(document.documentElement.dataset.theme === 'inverted')
-  }, [])
+  const inv = useSyncExternalStore(subscribeTheme, () => document.documentElement.dataset.theme === 'inverted', () => false)
   const toggle = () => {
     const html = document.documentElement
     const origin = document.querySelector('.page-origin')
@@ -29,7 +33,6 @@ export function ThemeToggle({ t }: { t: Dict }) {
       ease: 'power2.out',
       onComplete: () => {
         const next = !inv
-        setInv(next)
         if (next) html.dataset.theme = 'inverted'
         else delete html.dataset.theme
         try {

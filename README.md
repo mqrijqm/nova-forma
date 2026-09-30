@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nova Forma — studio site (use case: theshift.tokyo)
 
-## Getting Started
+Multipage creative-studio site rebuilt from the UX of theshift.tokyo.
+Next.js 16 (App Router) · Tailwind 4 · GSAP + ScrollTrigger · Lenis. EN / BS.
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Run
+```
+pnpm install
+pnpm dev        # http://localhost:3000/en
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
+| Route | What it shows |
+|---|---|
+| `/[lang]` | Hero title (serif/sans/serif) + arch auto-slider, statement, featured list with cursor-following hover media, marquee footer |
+| `/[lang]/project` | Tilted infinite drag/wheel strip, hover title flip, minimap |
+| `/[lang]/project/[slug]` | Title, parallax hero video + statement, info, marquee, credits, next-project footer |
+| `/[lang]/research` | Multi-speed parallax collages with giant titles |
+| `/[lang]/about` | Concept, daily generative logo, team with hover portraits, drag gallery, join, profile |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Reuse
+- Copy lives in `src/content/` (`dict.ts` UI strings, `projects.ts`, `research.ts`, `team.ts`).
+- Motion system (split text + reveals) = `src/components/Split.tsx` + the "Split text" section of `globals.css`.
+- Grid unit `--gw` = 1/24 of the viewport; colors `--paper / --ink / --accent`.
+- Fonts: Zolina Light (display) + Hanken Grotesk (UI), in `src/fonts`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Media
+Images were generated with Codex (`gpt-6-sol`); prompts in `_gen/batch*.txt` (git-ignored).
+- `python scripts/optimize.py` → PNG → WebP into `public/media`
+- `bash scripts/make-loops.sh` → seamless 10 s "breathing camera" MP4 loops from stills

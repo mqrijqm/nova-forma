@@ -56,7 +56,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     document.fonts.ready.then(() => requestAnimationFrame(go))
     const t = setTimeout(go, 1500)
     return () => clearTimeout(t)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [])
 
   // --- Reveal observers ----------------------------------------------------
@@ -84,7 +84,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     runtime.navigate = (href: string) => {
       const html = document.documentElement
       if (href === window.location.pathname) {
-        runtime.lenis ? runtime.lenis.scrollTo(0) : window.scrollTo({ top: 0, behavior: 'smooth' })
+        if (runtime.lenis) runtime.lenis.scrollTo(0)
+        else window.scrollTo({ top: 0, behavior: 'smooth' })
         return
       }
       html.classList.add('is-tr-leaving')
@@ -113,7 +114,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       scan()
     }, LEAVE_MS)
     return () => clearTimeout(t)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [pathname])
 
   // Late-mounted content (client components) → rescan
@@ -123,7 +124,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     })
     mo.observe(document.body, { childList: true, subtree: true })
     return () => mo.disconnect()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [])
 
   // --- Header states -------------------------------------------------------

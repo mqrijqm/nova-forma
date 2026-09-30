@@ -52,6 +52,13 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
 
   return (
     <html lang={lang} className={`${zolina.variable} ${hanken.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "try{if(localStorage.getItem('nf-theme')==='inverted')document.documentElement.dataset.theme='inverted'}catch(e){}",
+          }}
+        />
+      </head>
       <body>
         <Header lang={lang} t={t} />
         <main className="site-window">

@@ -6,7 +6,10 @@ import { projects } from '@/content/projects'
 import Archive from '@/components/archive/Archive'
 import LangPill from '@/components/LangPill'
 
-export const metadata: Metadata = { title: 'Project' }
+export async function generateMetadata({ params }: PageProps<'/[lang]/project'>): Promise<Metadata> {
+  const { lang } = await params
+  return { title: lang === 'bs' ? 'Projekti' : 'Project' }
+}
 
 export default async function ProjectArchive({ params }: PageProps<'/[lang]/project'>) {
   const { lang } = await params
