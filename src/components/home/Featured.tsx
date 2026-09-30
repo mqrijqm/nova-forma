@@ -5,7 +5,7 @@ import TLink from '../shell/TLink'
 import Split from '../Split'
 import HoverPlane, { type HoverPlaneHandle } from '../HoverPlane'
 import type { Project } from '@/content/projects'
-import { videoFor } from '@/content/media'
+import { hoverFor } from '@/content/media'
 import type { Locale } from '@/lib/i18n'
 
 export default function Featured({ items, lang }: { items: Project[]; lang: Locale }) {
@@ -35,7 +35,7 @@ export default function Featured({ items, lang }: { items: Project[]; lang: Loca
           </div>
         </TLink>
       ))}
-      <HoverPlane ref={plane} images={items.map((p) => ({ src: p.wide, video: videoFor(p.slug, 'wide') }))} />
+      <HoverPlane ref={plane} images={items.map((p) => hoverFor(p.slug))} />
     </div>
   )
 }

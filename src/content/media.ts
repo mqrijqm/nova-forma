@@ -10,3 +10,8 @@ const loops: Record<string, { portrait?: boolean; wide?: boolean }> = {
 export function videoFor(slug: string, kind: 'portrait' | 'wide') {
   return loops[slug]?.[kind] ? `/media/loop-${slug}-${kind}.mp4` : undefined
 }
+
+/** Dedicated hover visuals for the home featured list. */
+export function hoverFor(slug: string) {
+  return { src: `/media/h-${slug}.webp`, video: `/media/loop-hover-${slug}.mp4` }
+}

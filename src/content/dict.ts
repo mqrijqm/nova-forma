@@ -105,10 +105,10 @@ const bs: Dict = {
   footer: {
     tagline: 'Iz Sarajeva\nza cijeli svijet',
     backToTop: 'Na vrh',
-    cta: 'Javite *se* nama',
+    cta: 'Javite *nam* se',
     social: 'Instagram',
-    dark: 'Tamni mod',
-    light: 'Svijetli mod',
+    dark: 'Tamna tema',
+    light: 'Svijetla tema',
   },
   archive: { drag: '(Prevuci)', swipe: '(Prevuci)' },
   cursor: { drag: 'Prevuci', explore: 'Istraži', next: 'Dalje', click: 'Klik' },

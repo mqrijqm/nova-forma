@@ -36,9 +36,15 @@ const hanken = localFont({
   ],
 })
 
-export const metadata: Metadata = {
-  title: { default: 'NOVA FORMA', template: '%s — NOVA FORMA' },
-  description: 'Nova Forma is a creative studio based in Sarajevo, giving ideas a new form through light and space.',
+export async function generateMetadata({ params }: LayoutProps<'/[lang]'>): Promise<Metadata> {
+  const { lang } = await params
+  return {
+    title: { default: 'NOVA FORMA', template: '%s — NOVA FORMA' },
+    description:
+      lang === 'en'
+        ? 'Nova Forma is a creative studio based in Sarajevo, giving ideas a new form through light and space.'
+        : 'Nova Forma je kreativni studio iz Sarajeva koji idejama daje novu formu kroz svjetlo i prostor.',
+  }
 }
 
 export function generateStaticParams() {
