@@ -1,0 +1,7 @@
+_gen
+shots
+.playwright-mcp
+.next
+node_modules
+.dev.log
+.build.log

@@ -44,3 +44,5 @@ _gen/
 shots/
 .playwright-mcp/
 .build.log
+
+.vercel
