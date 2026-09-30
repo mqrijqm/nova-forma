@@ -46,3 +46,4 @@ shots/
 .build.log
 
 .vercel
+.dev*.log
