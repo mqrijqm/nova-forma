@@ -1291,9 +1291,9 @@ html.is-dragging .archive { cursor: grabbing; }
 .gl-strip { position: relative; height: calc(var(--LH) / 12); overflow: hidden; }
 .gl-strip-in {
   position: absolute;
-  left: 0;
+  left: calc(var(--LW) * -1);
   top: calc(var(--LH) / -12 * var(--i));
-  width: calc(var(--LW) * 2);
+  width: calc(var(--LW) * 3);
   display: flex;
   will-change: transform;
 }
@@ -1307,7 +1307,7 @@ html.is-dragging .archive { cursor: grabbing; }
   color: var(--accent);
   font-family: var(--font-hanken), sans-serif;
   font-weight: 800;
-  font-size: calc(var(--gw) * 4.3);
+  font-size: calc(var(--gw) * 3.8);
   line-height: 0.78;
   letter-spacing: -0.05em;
 }

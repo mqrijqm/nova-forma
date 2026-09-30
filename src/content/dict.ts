@@ -16,7 +16,7 @@ const en = {
     viewAll: 'View all project',
   },
   territory: 'Our craft\nand clients',
-  fieldsA: ['Chandeliers', 'Pendants', 'Wall lights', 'Lighting design', 'Glassblowing', 'Brasswork', 'Installation'],
+  fieldsA: ['Chandeliers', 'Pendants', 'Wall lights', 'Lighting design', 'Glass shades', 'Brasswork', 'Installation'],
   fieldsB: ['Hotels', 'Restaurants', 'Residences', 'Museums', 'Galleries', 'Offices', 'Heritage', 'Gardens', 'Retail'],
   footer: {
     tagline: 'Atelier in Sarajevo\nprojects worldwide',
@@ -51,11 +51,11 @@ const en = {
     title: ['About', 'Nova Forma'],
     support: 'A lighting atelier where every piece\nis designed and made by hand',
     concept: 'Concept',
-    statement: 'We believe light is a material.\nIt can be blown, cast, pleated and polished,\njust like glass, brass and linen.',
+    statement: 'We believe good light changes a room.\nThat is why we design, make and install\nevery chandelier ourselves.',
     conceptBody:
-      'Nova Forma was founded in 2019 by lighting designer Amar Hadžić in a former copper workshop in Baščaršija. Today twelve people work under one roof: designers, glassblowers, metalworkers and lighting engineers. We make custom chandeliers and lamps for hotels, restaurants, homes and museums, and we plan the complete lighting of the spaces they hang in. Everything we sell is made in Sarajevo and installed by our own team.',
+      'Nova Forma was founded in 2019 by lighting designer Amar Hadžić in a former copper workshop in Baščaršija. Today twelve people work under one roof: designers, metalworkers, lighting engineers and installers. We make custom chandeliers and lamps for hotels, restaurants, homes and museums, and we plan the complete lighting of the spaces they hang in. Everything we sell is made in Sarajevo and installed by our own team.',
     logoLead:
-      'Our logo re-forms itself every midnight, based on the year, month and date, the way daylight changes a room from hour to hour. No two days look the same, just like no two hand-blown shades.',
+      'Our logo re-forms itself every midnight, based on the year, month and date, the way daylight changes a room from hour to hour. No two days look the same, just like no two handmade shades.',
     nextForm: 'Next form',
     formThe: ['Glass', 'Brass', 'Linen', 'Copper', 'Alabaster'],
     team: 'Team',
@@ -65,9 +65,9 @@ const en = {
     gallery: 'Atelier',
     join: 'Join us',
     joinBody:
-      'We are always looking for patient hands and curious eyes. If you work with glass, metal or light and want to see your work hanging in real spaces, send us a few pieces you are proud of.',
+      'We are always looking for patient hands and curious eyes. If you work with metal, electrics or light and want to see your work hanging in real spaces, send us a few pieces you are proud of.',
     entry: 'Apply',
-    roles: ['Glassblower', 'Metalworker', 'Lighting designer', 'Project manager'],
+    roles: ['Metalworker', 'Lighting designer', 'Electrician / installer', 'Project manager'],
     profile: 'Profile',
     profileRows: [
       ['Company name', 'Nova Forma d.o.o.'],
@@ -78,7 +78,7 @@ const en = {
     ],
     partners: 'Partners',
     partner: 'Staklara Kreševo',
-    partnerDesc: 'Glass furnace partner since 2019',
+    partnerDesc: 'Glass shade supplier since 2019',
   },
 }
 
@@ -100,7 +100,7 @@ const bs: Dict = {
     viewAll: 'Svi projekti',
   },
   territory: 'Naš zanat\ni klijenti',
-  fieldsA: ['Lusteri', 'Visilice', 'Zidne lampe', 'Dizajn rasvjete', 'Duvanje stakla', 'Mesing', 'Montaža'],
+  fieldsA: ['Lusteri', 'Visilice', 'Zidne lampe', 'Dizajn rasvjete', 'Stakleni abažuri', 'Mesing', 'Montaža'],
   fieldsB: ['Hoteli', 'Restorani', 'Domovi', 'Muzeji', 'Galerije', 'Uredi', 'Naslijeđe', 'Vrtovi', 'Radnje'],
   footer: {
     tagline: 'Atelje u Sarajevu\nprojekti širom svijeta',
@@ -135,11 +135,11 @@ const bs: Dict = {
     title: ['O nama', 'Nova Forma'],
     support: 'Atelje za svjetlo u kojem je svaki komad\ndizajniran i napravljen rukom',
     concept: 'Koncept',
-    statement: 'Vjerujemo da je svjetlo materijal.\nMože se duvati, liti, plisirati i polirati,\nbaš kao staklo, mesing i lan.',
+    statement: 'Vjerujemo da dobro svjetlo mijenja prostor.\nZato svaki luster sami dizajniramo,\nizrađujemo i montiramo.',
     conceptBody:
-      'Novu Formu je 2019. osnovao dizajner svjetla Amar Hadžić u nekadašnjoj kazandžijskoj radionici na Baščaršiji. Danas pod jednim krovom radi dvanaest ljudi: dizajneri, staklari, metalci i inženjeri rasvjete. Pravimo lustere i lampe po mjeri za hotele, restorane, domove i muzeje, i planiramo kompletnu rasvjetu prostora u kojima vise. Sve što prodajemo napravljeno je u Sarajevu i montira ga naš tim.',
+      'Novu Formu je 2019. osnovao dizajner svjetla Amar Hadžić u nekadašnjoj kazandžijskoj radionici na Baščaršiji. Danas pod jednim krovom radi dvanaest ljudi: dizajneri, metalci, inženjeri rasvjete i monteri. Pravimo lustere i lampe po mjeri za hotele, restorane, domove i muzeje, i planiramo kompletnu rasvjetu prostora u kojima vise. Sve što prodajemo napravljeno je u Sarajevu i montira ga naš tim.',
     logoLead:
-      'Naš logo se preoblikuje svake ponoći, na osnovu godine, mjeseca i datuma, kao što dnevno svjetlo mijenja sobu iz sata u sat. Nijedan dan ne izgleda isto, baš kao ni dva ručno duvana abažura.',
+      'Naš logo se preoblikuje svake ponoći, na osnovu godine, mjeseca i datuma, kao što dnevno svjetlo mijenja sobu iz sata u sat. Nijedan dan ne izgleda isto, baš kao ni dva ručno rađena abažura.',
     nextForm: 'Sljedeća forma',
     formThe: ['Staklo', 'Mesing', 'Lan', 'Bakar', 'Alabaster'],
     team: 'Tim',
@@ -149,9 +149,9 @@ const bs: Dict = {
     gallery: 'Atelje',
     join: 'Pridruži se',
     joinBody:
-      'Uvijek tražimo strpljive ruke i radoznale oči. Ako radiš sa staklom, metalom ili svjetlom i želiš vidjeti svoj rad kako visi u stvarnim prostorima, pošalji nam nekoliko komada na koje si ponosan/na.',
+      'Uvijek tražimo strpljive ruke i radoznale oči. Ako radiš s metalom, elektrikom ili svjetlom i želiš vidjeti svoj rad kako visi u stvarnim prostorima, pošalji nam nekoliko komada na koje si ponosan/na.',
     entry: 'Prijava',
-    roles: ['Staklar', 'Metalac', 'Dizajner rasvjete', 'Projekt menadžer'],
+    roles: ['Metalac', 'Dizajner rasvjete', 'Električar / monter', 'Projekt menadžer'],
     profile: 'Profil',
     profileRows: [
       ['Naziv firme', 'Nova Forma d.o.o.'],
@@ -162,7 +162,7 @@ const bs: Dict = {
     ],
     partners: 'Partneri',
     partner: 'Staklara Kreševo',
-    partnerDesc: 'Partner za staklarsku peć od 2019.',
+    partnerDesc: 'Dobavljač staklenih abažura od 2019.',
   },
 }
 

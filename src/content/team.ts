@@ -33,15 +33,6 @@ export const team: Member[] = [
     },
   },
   {
-    name: 'Ena Kovač',
-    img: '/media/team-4.webp',
-    role: { en: 'Master glassblower', bs: 'Majstorica duvanja stakla' },
-    bio: {
-      en: 'Ena learned glassblowing in Murano and brought it home. She runs our furnace, trains apprentices and signs every globe of the Opal Series. Her record: 1,240 matching drops for the Bašta chandelier in nine weeks.',
-      bs: 'Ena je duvanje stakla naučila na Muranu i donijela ga kući. Vodi našu peć, obučava šegrte i potpisuje svaku kuglu Opal serije. Njen rekord: 1.240 usklađenih kapi za luster u Bašti za devet sedmica.',
-    },
-  },
-  {
     name: 'Haris Delić',
     img: '/media/team-5.webp',
     role: { en: 'Brass & metalwork', bs: 'Mesing i metal' },
@@ -62,10 +53,10 @@ export const team: Member[] = [
   {
     name: 'Staklara Kreševo',
     collaborator: true,
-    role: { en: 'Glass furnace partner', bs: 'Partner za staklarsku peć' },
+    role: { en: 'Glass shade supplier', bs: 'Dobavljač staklenih abažura' },
     bio: {
-      en: 'A family glassworks near Kreševo where we blow our largest pieces. Partners since our first chandelier.',
-      bs: 'Porodična staklara kod Kreševa u kojoj duvamo naše najveće komade. Partneri od našeg prvog lustera.',
+      en: 'A family glassworks near Kreševo that supplies our glass shades and drops. Partners since our first chandelier.',
+      bs: 'Porodična staklara kod Kreševa koja nam isporučuje staklene abažure i kapi. Partneri od našeg prvog lustera.',
     },
     link: 'https://example.com',
   },
@@ -83,7 +74,6 @@ export const team: Member[] = [
 
 export const gallery = [
   { src: '/media/ab-atelier-1.webp', caption: { en: 'Showroom, Kazandžiluk', bs: 'Izložbeni salon, Kazandžiluk' } },
-  { src: '/media/ab-atelier-2.webp', caption: { en: 'Glass workshop', bs: 'Staklarska radionica' } },
   { src: '/media/ab-atelier-3.webp', caption: { en: 'Design desk', bs: 'Radni sto dizajna' } },
   { src: '/media/ab-atelier-4.webp', caption: { en: 'Brass workshop', bs: 'Radionica mesinga' } },
   { src: '/media/ab-atelier-5.webp', caption: { en: 'Ready for shipping', bs: 'Spremno za isporuku' } },

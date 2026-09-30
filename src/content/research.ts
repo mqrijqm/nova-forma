@@ -27,13 +27,13 @@ export const research: Research[] = [
     headline: { en: 'Glass research', bs: 'Istraživanje stakla' },
     year: 2026,
     lead: {
-      en: 'Every week our glassblowers test new shapes and wall thicknesses to find how glass can hide the light source and still let 80% of the light through.',
-      bs: 'Svake sedmice naši staklari testiraju nove oblike i debljine stakla kako bi otkrili kako staklo može sakriti izvor svjetla, a ipak propustiti 80% svjetla.',
+      en: 'Every week we test new glass shades from our suppliers to find the shapes and thicknesses that hide the light source and still let 80% of the light through.',
+      bs: 'Svake sedmice testiramo nove staklene abažure naših dobavljača kako bismo pronašli oblike i debljine koji skrivaju izvor svjetla, a ipak propuštaju 80% svjetla.',
     },
     project: 'opal-series',
     topH: 9,
     top: [
-      { src: m('rs-glass-1'), x: 1, y: 1, w: 6, h: 4.5, speed: -1, caption: 'Furnace, 1,150 °C' },
+      { src: m('gal-basta-2'), x: 1, y: 1, w: 5, h: 6.25, speed: -1, caption: 'Drop and fitting' },
       { src: m('rs-glass-3'), x: 14, y: 2.6, w: 8, h: 6, speed: 0.5, caption: 'Clear, smoked, opal' },
     ],
     bottomH: 9,

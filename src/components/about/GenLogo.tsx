@@ -39,14 +39,16 @@ export default function GenLogo({ label, lead }: { label: string; lead: string }
       setDigits(ds)
       const strips = root.current?.querySelectorAll<HTMLElement>('.gl-strip-in')
       strips?.forEach((el, i) => {
-        const x = -(ds[i] / 9) * 100
+        // digit 0–8 → shift of −4%…+4% of the mark width, so the logo
+        // glitches a little every day but always stays readable
+        const x = ((ds[i] - 4) / 4) * 4
         if (intro) {
           gsap.fromTo(
             el,
-            { xPercent: x + (i % 2 ? 100 : -100) / 2 },
-            { xPercent: x / 2, duration: 1, delay: i * 0.06, ease: 'expo.out' },
+            { xPercent: (x + (i % 2 ? 100 : -100)) / 3 },
+            { xPercent: x / 3, duration: 1, delay: i * 0.06, ease: 'expo.out' },
           )
-        } else gsap.to(el, { xPercent: x / 2, duration: 2, ease: 'power3.inOut', delay: i * 0.04 })
+        } else gsap.to(el, { xPercent: x / 3, duration: 2, ease: 'power3.inOut', delay: i * 0.04 })
       })
     }
     const io = new IntersectionObserver(([e]) => {
@@ -83,6 +85,7 @@ export default function GenLogo({ label, lead }: { label: string; lead: string }
         {Array.from({ length: STRIPS }, (_, i) => (
           <div key={i} className="gl-strip" style={{ '--i': i } as CSSProperties}>
             <div className="gl-strip-in">
+              {mark}
               {mark}
               {mark}
             </div>

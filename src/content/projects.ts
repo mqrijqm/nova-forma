@@ -28,7 +28,6 @@ const m = (n: string) => `/media/${n}.webp`
 const baseCredits = (extra: { role: T; name: string }[] = []) => [
   { role: { en: 'Lighting designer / Founder', bs: 'Dizajner svjetla / Osnivač' }, name: 'Amar Hadžić' },
   { role: { en: 'Product designer', bs: 'Dizajnerica proizvoda' }, name: 'Lejla Begović' },
-  { role: { en: 'Master glassblower', bs: 'Majstorica duvanja stakla' }, name: 'Ena Kovač' },
   { role: { en: 'Brass & metalwork', bs: 'Mesing i metal' }, name: 'Haris Delić' },
   ...extra,
   { role: { en: 'Lighting engineer', bs: 'Inženjer rasvjete' }, name: 'Tarik Mujić' },
@@ -47,12 +46,12 @@ export const projects: Project[] = [
     featured: true,
     statement: { en: ['A ring', 'of', 'Glass'], bs: ['Prsten', 'od', 'Stakla'] },
     lead: {
-      en: 'A six-metre brass ring holding 1,240 hand-blown glass drops for the double-height lobby of Hotel Bašta.',
-      bs: 'Mesingani prsten od šest metara sa 1.240 ručno duvanih staklenih kapi za lobi Hotela Bašta.',
+      en: 'A six-metre brass ring holding 1,240 glass drops for the double-height lobby of Hotel Bašta.',
+      bs: 'Mesingani prsten od šest metara sa 1.240 staklenih kapi za lobi Hotela Bašta.',
     },
     body: {
-      en: 'The hotel wanted guests to feel the lobby before they see it. We designed a single ring chandelier that fills the double-height space without blocking the view to the old town. Every drop was blown in our Sarajevo workshop, each slightly different, and hung by hand over four nights. Warm-dimming LEDs hidden in the ring move from 3000K at noon to 2200K after dinner.',
-      bs: 'Hotel je želio da gosti osjete lobi prije nego što ga vide. Dizajnirali smo jedan prstenasti luster koji ispunjava prostor dvostruke visine, a ne zaklanja pogled na stari grad. Svaka kap je duvana u našoj radionici u Sarajevu, svaka malo drugačija, i ručno okačena tokom četiri noći. LED diode skrivene u prstenu prelaze sa 3000K u podne na 2200K nakon večere.',
+      en: 'The hotel wanted guests to feel the lobby before they see it. We designed a single ring chandelier that fills the double-height space without blocking the view to the old town. Every drop was fitted to the ring in our Sarajevo workshop and hung by hand over four nights. Warm-dimming LEDs hidden in the ring move from 3000K at noon to 2200K after dinner.',
+      bs: 'Hotel je želio da gosti osjete lobi prije nego što ga vide. Dizajnirali smo jedan prstenasti luster koji ispunjava prostor dvostruke visine, a ne zaklanja pogled na stari grad. Svaka kap je montirana na prsten u našoj radionici u Sarajevu i ručno okačena tokom četiri noći. LED diode skrivene u prstenu prelaze sa 3000K u podne na 2200K nakon večere.',
     },
     gallery: [
       { src: m('gal-basta-1'), ratio: 1.5 },
@@ -72,14 +71,14 @@ export const projects: Project[] = [
     featured: true,
     statement: { en: ['Soft', 'as', 'Milk'], bs: ['Meko', 'kao', 'Mlijeko'] },
     lead: {
-      en: 'Our first collection: hand-blown opal glass globes in four sizes, with brushed brass caps made in-house.',
-      bs: 'Naša prva kolekcija: ručno duvane kugle od opal stakla u četiri veličine, s mesinganim kapama iz naše radionice.',
+      en: 'Our first collection: opal glass globes in four sizes, with brushed brass caps made in-house.',
+      bs: 'Naša prva kolekcija: kugle od opal stakla u četiri veličine, s mesinganim kapama iz naše radionice.',
     },
     body: {
-      en: 'Opal glass turns a bright point of light into a calm, even glow. After two years of tests we found the wall thickness that hides the LED completely while losing only 18% of its light. The Opal Series comes in 20, 30, 40 and 55 cm, can hang alone or in clusters, and every globe is signed and numbered by the glassblower who made it.',
-      bs: 'Opal staklo pretvara jaku tačku svjetla u miran, ujednačen sjaj. Nakon dvije godine testova pronašli smo debljinu stakla koja potpuno skriva LED, a gubi samo 18% svjetla. Opal serija dolazi u veličinama 20, 30, 40 i 55 cm, može visiti sama ili u grupama, a svaku kuglu potpisuje i numeriše staklar koji ju je napravio.',
+      en: 'Opal glass turns a bright point of light into a calm, even glow. After two years of tests we found the wall thickness that hides the LED completely while losing only 18% of its light. The Opal Series comes in 20, 30, 40 and 55 cm, can hang alone or in clusters, and every lamp is assembled, tested and numbered in our workshop.',
+      bs: 'Opal staklo pretvara jaku tačku svjetla u miran, ujednačen sjaj. Nakon dvije godine testova pronašli smo debljinu stakla koja potpuno skriva LED, a gubi samo 18% svjetla. Opal serija dolazi u veličinama 20, 30, 40 i 55 cm, može visiti sama ili u grupama, a svaka lampa se sklapa, testira i numeriše u našoj radionici.',
     },
-    marquee: { en: 'Hand-blown opal glass', bs: 'Ručno duvano opal staklo' },
+    marquee: { en: 'Soft opal glow', bs: 'Mek opal sjaj' },
     credits: baseCredits(),
   },
   {

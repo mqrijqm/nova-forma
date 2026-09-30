@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import gsap from 'gsap'
 import { runtime } from '@/lib/store'
 
@@ -12,6 +13,15 @@ import { runtime } from '@/lib/store'
 export default function Cursor() {
   const ref = useRef<HTMLDivElement>(null)
   const [label, setLabel] = useState('')
+  const pathname = usePathname()
+
+  // A new page never inherits the previous page's cursor state (e.g. "NEXT").
+  useEffect(() => {
+    const html = document.documentElement
+    html.removeAttribute('data-cursor')
+    html.classList.remove('is-dragging')
+    window.dispatchEvent(new Event('nf:cursor-reset'))
+  }, [pathname])
 
   useEffect(() => {
     const html = document.documentElement
@@ -45,6 +55,8 @@ export default function Cursor() {
         html.dataset.cursor = c
       }
     }
+    const reset = () => (current = '')
+    window.addEventListener('nf:cursor-reset', reset)
     const down = () => html.classList.add('is-dragging')
     const up = () => html.classList.remove('is-dragging')
     const leave = () => html.classList.remove('is-mouse-active')
@@ -64,6 +76,7 @@ export default function Cursor() {
     document.documentElement.addEventListener('mouseenter', enter)
     return () => {
       gsap.ticker.remove(tick)
+      window.removeEventListener('nf:cursor-reset', reset)
       window.removeEventListener('pointermove', move)
       document.removeEventListener('pointerover', over)
       window.removeEventListener('pointerdown', down)
