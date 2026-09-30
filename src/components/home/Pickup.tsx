@@ -99,7 +99,7 @@ export default function Pickup({ slides, label }: { slides: Slide[]; label: stri
             tabIndex={i === index ? 0 : -1}
             data-c="small"
           >
-            <Media src={s.src} video={s.video} alt={s.alt} sizes="270px" priority={i === 0} />
+            <Media src={s.src} alt={s.alt} sizes="(max-width: 767px) 50vw, 270px" priority={i === 0} eager />
           </TLink>
         ))}
       </div>

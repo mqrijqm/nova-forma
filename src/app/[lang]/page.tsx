@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation'
 import { hasLocale } from '@/lib/i18n'
 import { getDict } from '@/content/dict'
 import { featured } from '@/content/projects'
-import { videoFor } from '@/content/media'
 import Split from '@/components/Split'
 import Clock from '@/components/Clock'
 import Pickup from '@/components/home/Pickup'
@@ -53,7 +52,6 @@ export default async function Home({ params }: PageProps<'/[lang]'>) {
           slides={featured.map((p) => ({
             href: `/${lang}/project/${p.slug}`,
             src: p.cover,
-            video: videoFor(p.slug, 'portrait'),
             alt: p.title.join(' '),
           }))}
         />

@@ -1,12 +1,12 @@
-# Nova Forma — studio site (use case: theshift.tokyo)
+# Nova Forma — lighting atelier site (use case: theshift.tokyo)
 
-Multipage creative-studio site rebuilt from the UX of theshift.tokyo.
-Next.js 16 (App Router) · Tailwind 4 · GSAP + ScrollTrigger · Lenis. EN / BS.
+Multipage site for a Sarajevo lighting atelier (custom chandeliers + lighting design), rebuilt from the UX of theshift.tokyo.
+Next.js 16 (App Router) · Tailwind 4 · GSAP + ScrollTrigger · Lenis. BS (default) / EN.
 
 ## Run
 ```
 pnpm install
-pnpm dev        # http://localhost:3000/en
+pnpm dev        # http://localhost:3000/bs
 ```
 
 ## Pages
@@ -27,4 +27,3 @@ pnpm dev        # http://localhost:3000/en
 ## Media
 Images were generated with Codex (`gpt-6-sol`); prompts in `_gen/batch*.txt` (git-ignored).
 - `python scripts/optimize.py` → PNG → WebP into `public/media`
-- `bash scripts/make-loops.sh` → seamless 10 s "breathing camera" MP4 loops from stills

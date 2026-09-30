@@ -3,13 +3,12 @@ import { notFound } from 'next/navigation'
 import { hasLocale, locales } from '@/lib/i18n'
 import { getDict } from '@/content/dict'
 import { getProject, nextProject, projects } from '@/content/projects'
-import { videoFor } from '@/content/media'
 import Split from '@/components/Split'
 import Footer from '@/components/Footer'
 import TLink from '@/components/shell/TLink'
 import LangPill from '@/components/LangPill'
 import ParallaxMedia from '@/components/ParallaxMedia'
-import PulseDiagram from '@/components/detail/PulseDiagram'
+import LightDiagram from '@/components/detail/LightDiagram'
 import { Border, Headline, Marquee, Spacer, Star } from '@/components/ui'
 
 export function generateStaticParams() {
@@ -30,7 +29,7 @@ export default async function ProjectDetail({ params }: PageProps<'/[lang]/proje
   if (!p) notFound()
   const t = getDict(lang)
   const next = nextProject(slug)
-  const [s1, s2, s3] = p.statement ?? [p.title[0], '', p.title[1] ?? '']
+  const [s1, s2, s3] = p.statement?.[lang] ?? [p.title[0], '', p.title[1] ?? '']
 
   return (
     <>
@@ -53,10 +52,13 @@ export default async function ProjectDetail({ params }: PageProps<'/[lang]/proje
       </section>
 
       <section className="single-hero" data-bg="dark">
-        <ParallaxMedia src={p.wide} video={videoFor(p.slug, 'wide')} alt={p.title.join(' ')} priority />
+        <ParallaxMedia src={p.wide} alt={p.title.join(' ')} priority />
         <div className="single-statement">
-          <Split lines={[s1, s2]} mode="char" variant="flip-c" className="st-solid" />
-          <Split lines={[s3]} mode="char" variant="flip-c" className="st-outline" delay={0.2} />
+          <Split lines={[s1]} mode="char" variant="flip-c" className="st-solid" />
+          <div className="st-row">
+            <Split lines={[s2]} mode="char" variant="flip-c" className="st-solid" delay={0.1} />
+            <Split lines={[s3]} mode="char" variant="flip-c" className="st-outline" delay={0.2} />
+          </div>
           <Split lines={p.lead[lang]} variant="clip" className="st-lead upper" />
         </div>
       </section>
@@ -110,11 +112,11 @@ export default async function ProjectDetail({ params }: PageProps<'/[lang]/proje
           <Border className="sub" />
         </div>
         <Spacer n={1.5} />
-        <Marquee a={[p.marquee, p.marquee, p.marquee]} b={[p.marquee, p.marquee, p.marquee]} />
+        <Marquee a={[p.marquee[lang], p.marquee[lang], p.marquee[lang]]} b={[p.marquee[lang], p.marquee[lang], p.marquee[lang]]} />
         <Spacer n={2} />
-        {p.slug === 'pulse-link' && (
+        {p.diagram && (
           <>
-            <PulseDiagram />
+            <LightDiagram lang={lang} />
             <Spacer n={2} />
           </>
         )}

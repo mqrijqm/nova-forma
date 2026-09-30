@@ -14,6 +14,7 @@ export default function Media({
   sizes = '100vw',
   priority = false,
   className = 'media',
+  eager = false,
 }: {
   src: string
   video?: string
@@ -21,6 +22,7 @@ export default function Media({
   sizes?: string
   priority?: boolean
   className?: string
+  eager?: boolean
 }) {
   const vref = useRef<HTMLVideoElement>(null)
   useEffect(() => {
@@ -36,7 +38,7 @@ export default function Media({
 
   return (
     <>
-      <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className={className} />
+      <Image src={src} alt={alt} fill sizes={sizes} priority={priority} loading={priority ? undefined : eager ? 'eager' : undefined} className={className} />
       {video && (
         <video
           ref={vref}

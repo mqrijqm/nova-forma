@@ -83,7 +83,7 @@ const HoverPlane = forwardRef<HoverPlaneHandle, { images: { src: string; video?:
         {images.map((im, i) => (
           <div key={i} className="hp-layer" ref={(n) => void (layers.current[i] = n)}>
             <div className="hp-inner">
-              <Image src={im.src} alt="" fill sizes="480px" />
+              <Image src={im.src} alt="" fill sizes="480px" loading="eager" />
               {im.video && <video src={im.video} muted loop playsInline preload="none" />}
             </div>
           </div>

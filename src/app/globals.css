@@ -1506,3 +1506,15 @@ html.is-dragging .archive { cursor: grabbing; }
   .join-cols { grid-template-columns: 1fr; row-gap: 30px; }
   .profile-grid { grid-template-columns: 1fr; }
 }
+
+/* Diacritics (Š Č Ć Ž Đ) rise above cap height: let every text mask
+   extend upwards so carons/accents are never clipped. */
+.o { padding-top: 0.28em; margin-top: -0.28em; box-sizing: content-box; }
+.flip-c .w, .flip-f .w, .flip-b .w { padding-top: 0.28em; margin-top: -0.28em; box-sizing: content-box; }
+
+/* statement: second solid word and outline word share one row */
+.st-row { display: flex; align-items: flex-start; gap: 0.35em; font-size: var(--fs-feat-e); }
+.st-row .st-solid, .st-row .st-outline { font-size: 1em; margin: 0; }
+@media (max-width: 767px) {
+  .st-row { font-size: 12vw; flex-wrap: wrap; }
+}

@@ -1,0 +1,10 @@
+$ next dev "--port" "3300"
+▲ Next.js 16.3.7 (Turbopack)
+- Local:         http://localhost:3300
+- Network:       http://192.168.100.15:3300
+✓ Ready in 1072ms
+✓ Running next.config.ts took 110ms
+
+ GET /bs/project/galerija-ars 200 in 3.5s (next.js: 1570ms, generate-params: 1092ms, application-code: 834ms)
+[?25h
+[ELIFECYCLE] Command failed with exit code 4294967295.
