@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
-import { runtime, isTouch } from '@/lib/store'
+import { runtime } from '@/lib/store'
 
 /**
  * Red disc cursor. Elements opt-in via data-c:
@@ -14,17 +14,18 @@ export default function Cursor() {
   const [label, setLabel] = useState('')
 
   useEffect(() => {
-    if (isTouch()) return
     const html = document.documentElement
     const pos = { x: -100, y: -100 }
     let activated = false
     let current = ''
 
     const move = (e: PointerEvent) => {
+      if (e.pointerType !== 'mouse' && e.pointerType !== 'pen') return
       runtime.mouse.x = e.clientX
       runtime.mouse.y = e.clientY
       if (!activated) {
         activated = true
+        html.classList.add('has-mouse')
         pos.x = e.clientX
         pos.y = e.clientY
         setTimeout(() => html.classList.add('is-mouse-active'), 600)

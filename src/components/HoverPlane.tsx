@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react'
 import gsap from 'gsap'
-import { runtime, isTouch } from '@/lib/store'
+import { runtime } from '@/lib/store'
 
 export type HoverPlaneHandle = { show: (i: number) => void; hide: () => void }
 
@@ -55,7 +55,6 @@ const HoverPlane = forwardRef<HoverPlaneHandle, { images: { src: string; video?:
     }))
 
     useEffect(() => {
-      if (isTouch()) return
       const p = { x: runtime.mouse.x, y: runtime.mouse.y }
       const tick = () => {
         const el = plane.current

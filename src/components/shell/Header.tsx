@@ -5,7 +5,6 @@ import type { CSSProperties } from 'react'
 import TLink from './TLink'
 import type { Locale } from '@/lib/i18n'
 import type { Dict } from '@/content/dict'
-import { isTouch } from '@/lib/store'
 
 export function swapLocale(pathname: string, to: Locale) {
   return pathname.replace(/^\/(en|bs)(?=\/|$)/, `/${to}`)
@@ -30,7 +29,7 @@ export default function Header({ lang, t }: { lang: Locale; t: Dict }) {
 
       <nav
         className="site-navi"
-        onMouseEnter={() => !isTouch() && html().classList.contains('has-over-navi') && html().classList.add('is-menu-open')}
+        onMouseEnter={() => html().classList.contains('has-mouse') && html().classList.contains('has-over-navi') && html().classList.add('is-menu-open')}
         onMouseLeave={() => html().classList.remove('is-menu-open')}
       >
         <div className="navi-bg" />

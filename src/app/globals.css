@@ -715,9 +715,8 @@ html[data-page-theme='dark'] .navi-head .pill { background: transparent; border-
 }
 [data-cursor='label'] .ui-cursor-text .t { transform: none; }
 [data-cursor='label'].is-dragging .ui-cursor-text .t { transform: translateY(150%); }
-@media (hover: none), (pointer: coarse) {
-  .ui-cursor { display: none; }
-}
+/* shown only once a real mouse/trackpad moves (touchscreen laptops included) */
+html:not(.has-mouse) .ui-cursor { display: none; }
 
 /* ==========================================================================
    Marquee
@@ -979,9 +978,7 @@ html[data-page-theme='dark'] .navi-head .pill { background: transparent; border-
   will-change: transform;
 }
 .hp-inner img, .hp-inner video { object-fit: cover; width: 100%; height: 100%; position: absolute; inset: 0; }
-@media (hover: none), (pointer: coarse) {
-  .hover-plane { display: none; }
-}
+html:not(.has-mouse) .hover-plane { display: none; }
 
 /* ==========================================================================
    Footer
